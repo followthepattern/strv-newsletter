@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>STRV.AI Newsletter</title>
+    <style>
+        :root {
+            color-scheme: light dark;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            background-color: #ffffff;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+        }
+
+        .email-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #ffffff;
+        }
+
+        .header {
+            background-color: #062633;
+            padding: 40px 30px;
+            text-align: left;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background-size: 30px 30px;
+            opacity: 0.3;
+        }
+
+        .logo {
+            font-size: 32px;
+            font-weight: 700;
+            color: #e0e0e0 !important;
+            letter-spacing: 2px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .logo-accent {
+            color: #64b5f6 !important;
+        }
+
+        .tagline {
+            color: #ffffffc4;
+            font-size: 14px;
+            margin-top: 10px;
+            letter-spacing: 1px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .content {
+            padding: 40px 30px;
+        }
+
+        .section {
+            margin-bottom: 35px;
+        }
+
+        h1 {
+            color: #14485c;
+            font-size: 28px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            line-height: 1.3;
+        }
+
+        h2 {
+            color: #083344;
+            font-size: 22px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            border-left: 4px solid #083344;
+            padding-left: 15px;
+        }
+
+        p {
+            color: #424242;
+            font-size: 16px;
+            line-height: 1.7;
+            margin-bottom: 15px;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 100%);
+            border-left: 4px solid #083344;
+            padding: 25px;
+            margin: 25px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: #062633;
+            color: rgb(255, 255, 255);
+            text-decoration: none;
+            padding: 15px 35px;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 16px;
+            margin: 20px 0;
+            transition: transform 0.2s;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+        }
+
+        .divider {
+            height: 2px;
+            background: linear-gradient(90deg, transparent 0%, #083344 50%, transparent 100%);
+            margin: 35px 0;
+            opacity: 0.3;
+        }
+
+        .footer {
+            background-color: #f5f5f5;
+            padding: 30px;
+            text-align: center;
+            border-top: 1px solid #e0e0e0;
+        }
+
+        .footer-text {
+            color: #757575;
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: #083344;
+            text-decoration: none;
+            font-size: 13px;
+            margin: 0 10px;
+        }
+
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+
+        .unsubscribe {
+            margin-top: 15px;
+        }
+
+        .unsubscribe a {
+            color: #757575;
+            text-decoration: underline;
+            font-size: 12px;
+        }
+
+        .screenshot-section {
+            text-align: center;
+            margin: 35px 0;
+            padding: 20px 0;
+        }
+
+        .screenshot-container {
+            display: inline-block;
+            max-width: 100%;
+            padding: 0 20px;
+        }
+
+        .screenshot-image {
+            width: 100%;
+            max-width: 500px;
+            height: auto;
+            border-radius: 16px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+            border: 1px solid #e0e0e0;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .screenshot-caption {
+            color: #757575;
+            font-size: 14px;
+            font-style: italic;
+            margin-top: 15px;
+            text-align: center;
+        }
+
+        @media only screen and (max-width: 600px) {
+            .content {
+                padding: 30px 20px;
+            }
+
+            .header {
+                padding: 30px 20px;
+            }
+
+            h1 {
+                font-size: 24px;
+            }
+
+            h2 {
+                font-size: 20px;
+            }
+
+            .logo {
+                font-size: 28px;
+            }
+
+            .screenshot-container {
+                padding: 0 10px;
+            }
+
+            .screenshot-image {
+                border-radius: 12px;
+                box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+                border: 1px solid #e0e0e0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="email-container">
+        <!-- Header -->
+        <div class="header">
+            <div class="logo">STRV<span class="logo-accent">.AI</span></div>
+            <div class="tagline">All-in-one fitness és coaching platform AI-asszisztenssel.</div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="content">
+            <div class="section">
+                <h1>Mennyire lehet tökéletes pontossággal követni az étkezést?</h1>
+                <p>
+                    A STRV.AI fejlesztése közben gyakran elgondolkodom azon, mennyire kell és lehet pontosan kiszámolni
+                    a napi kalóriabevitelt.
+                    Egy adag rizs esetében ez egyszerű, de mi a helyzet egy gyümölccsel? Mindegyik más méretű, más
+                    érettségű, így szinte lehetetlen teljes pontosságot elérni.
+                </p>
+                <p>
+                    <strong>Te mennyire pontosan követed az étkezésed?</strong>
+                    Írd meg e-mailben a saját módszeredet a <strong>csaba@strv.ai címre</strong>. Kíváncsi vagyok a
+                    véleményedre!
+                </p>
+                <p>
+                    A STRV.AI-t úgy alakítom ki, hogy az étkezések rögzítése egyszerre legyen gyors és kényelmes, de
+                    azok számára is kínáljon lehetőséget, akik nagyon precízen és részletesen szeretnék adminisztrálni a
+                    napi étrendjüket.
+                </p>
+            </div>
+
+            <div class="divider"></div>
+            <!-- Screenshot Section -->
+            <div class="screenshot-section">
+                <div class="screenshot-container">
+                    <img src="https://strv-images.s3.us-east-2.amazonaws.com/strv-screenshot-food.png"
+                        alt="STRV.AI app screenshot" class="screenshot-image">
+                    <p class="screenshot-caption">STRV.AI alkalmazás – új ételadatbázis felület</p>
+                </div>
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="section">
+                <h2>Heti hírek</h2>
+                <p>
+                    <strong>Étel adatbázis:</strong> Több mint 4 millió termék tápértékadata lesz elérhető a STRV.AI
+                    számára, amelyet nemzetközi szinten tartanak karban. Bárhová is utazol, nagy eséllyel megtalálod az
+                    általad fogyasztott terméket és rögzítheted pár másodperc alatt barcode használatával is.
+                </p>
+                <p>
+                    <strong>Megosztás:</strong> Nemcsak az előre feltöltött ételek közül lehet választani: saját
+                    hozzávalókat is rögzíthetsz, amelyeket akár másokkal is megoszthatsz.
+                </p>
+            </div>
+            
+            <div class="divider"></div>
+
+            <div class="section">
+                <h2>Következő lépés</h2>
+                <p>
+                    AI-alapú étkezésrögzítés, amellyel a napi adminisztráció még gyorsabbá válik sportolóknak, edzőknek
+                    és bárkinek, aki tudatosan követi az életmódját.
+                </p>
+            </div>
+
+            <div class="section">
+                <p>
+                    Csaba</br>
+                    STRV.AI
+                </p>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p class="footer-text">
+                STRV.AI: All-in-one fitness és coaching platform AI-asszisztenssel<br>
+            </p>
+
+            <div class="footer-links">
+                <a href="https://strv.ai/hu">Website</a>
+            </div>
+
+            <div class="unsubscribe">
+                <p class="footer-text">
+                    You're receiving this because you subscribed to STRV.AI updates.<br>
+                    <a href="{{ unsubscribe }}">Unsubscribe from this list</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
